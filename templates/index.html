@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Recommendation System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<style>
+    .text-yellow{
+         color:yellow
+    }
+</style>
+<body style="background-color : grey">
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">My Book Recommender</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="recommend">Recommend</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-yellow" style="font-size:50px" >Top 50 Books</h1>
+            </div>
+        {% for i in range(book_name|length) %}
+            <div class="col-md-2" style="margin-top:50px">
+                <div class="card">
+                    <div class="card-body" >
+                     <img class="card-img-top" src="{{image[i]}}">
+                     <p class="text-black">{{book_name[i]}}</p>
+                     <h4 class="text-black">{{author[i]}}</h4>
+                     <h4 class="text-black">Votes-{{votes[i]}}</h4>
+                     <h4 class="text-black">Rating-{{ratings[i]}}</h4>
+                     </div>
+                </div>
+            </div>
+        {% endfor %}
+
+        </div>
+    </div>
+
+</body>
+</html>
